@@ -27,22 +27,31 @@
   </div>
 </div>
 
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://s.france24.com/media/display/dfb73476-0fbc-11eb-8981-005056bf87d6/w:1280/p:16x9/000_1R15O1.webp);">
   <div class="container">
     <h1>Save <strong>any kind</strong> of <strong>movies</strong>!</h1>
     <p>Create your own lists and keep track of your favorite films.</p>
 <!--     <a class="btn btn-flat" href="#">Apply now</a>
- -->  </div>
+  -->  </div>
 </div>
 
 
-<h1>My lists</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="list_and_button">
+    <div>
+      <h1>My lists</h1>
+    </div>
+    <div>
+      <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
+    </div>
+  </div>
 
-<h6>
-  <%= link_to "Create a movie list", new_list_path %>
-</h6>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpapercave.com/wp/wp2714490.jpg)">
+      <%= link_to list.name, list_path(list) %>
+      </div>
+    <% end %>
+  </div>
+</div>

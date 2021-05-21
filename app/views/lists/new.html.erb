@@ -1,6 +1,9 @@
-<%= form_for(@list) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="form-group mt-5">
+    <%= form_for(@list) do |f| %>
+      <%= f.label "Enter your list" %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.submit class: "btn btn-primary mt-5"%>
+    <% end %>
+  </div>
+</div>
